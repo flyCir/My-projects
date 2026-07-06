@@ -1,0 +1,42 @@
+#First big project
+
+maintenance = False
+adm_password = 'Admin333'
+required_level = 3
+owner = 'flyCir'
+banned_user = 'CoolGamer'
+
+
+name = input('Enter your name:')
+passwo = input('Enter your password:')
+lvl = int(input('Enter your lvl:'))
+
+
+
+if maintenance:
+    print('System is under maintenance')
+elif banned_user == name:
+    print('Account is banned!')
+elif passwo == adm_password and lvl >= required_level:
+    print('Access granted!')
+    print('===========')
+    print('Name:', name)
+    print('Lvl:', lvl)
+    print('===========')
+    if name == owner:
+        print('Welcome!, Owner')
+
+    elif  lvl >= 15:
+            print('Welcome!, Chief Security Officer')
+    elif lvl >= 10:
+            print('Welcome!, Senior Analyst')
+    elif lvl >= 5:
+        print('Welcome!, Analyst')
+    elif lvl >= 3:
+            print("Welcome!, Intern")
+    else:
+            print('Welcome!, User')
+
+else:
+    print('Access denied')
+
