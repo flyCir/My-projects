@@ -52,7 +52,7 @@ else:
 
 def iflevel_low():
     if lvl <= required_level:
-        print('Your level is`nt required')
+        print('Your level is too low.')
 iflevel_low()
 
 def line():
@@ -64,21 +64,22 @@ def menu():
     print("2 - Show role")
     print("3 - Logout")
     line()
-while True:
-    menu()
+if passwo == adm_password and lvl >= required_level:
+    while True:
+        menu()
 
-    oli = int(input('Enter your chose:'))
+        oli = int(input('Enter your chose:'))
 
-    if oli == 1:
-        showprofile()
+        if oli == 1:
+            showprofile()
 
-    elif oli == 2:
-        showrole()
+        elif oli == 2:
+            showrole()
 
-    elif oli == 3:
-        print('Are you sure?')
-        print("yes/no")
-        kelo = input("Enter your chose:")
-        if kelo == 'yes':
-            print('GoodBye!')
-            break
+        elif oli == 3:
+            print('Are you sure?')
+            print("yes/no")
+            kelo = input("Enter your chose:")
+            if kelo == 'yes':
+                print('GoodBye!')
+                break
