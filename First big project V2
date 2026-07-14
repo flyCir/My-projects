@@ -1,0 +1,84 @@
+#First big project V2
+
+maintenance = False
+adm_password = 'Admin333'
+required_level = 3
+owner = 'flyCir'
+banned_user = 'CoolGamer'
+attempts = 3
+
+name = input('Enter your name:')
+passwo = input('Enter your password:')
+lvl = int(input('Enter your lvl:'))
+def showprofile():
+    print('Access granted!')
+    print('===========')
+    print('Name:', name)
+    print('Lvl:', lvl)
+    print('===========')
+def showrole():
+    if  lvl >= 15:
+            print('Welcome!, Chief Security Officer')
+    elif lvl >= 10:
+            print('Welcome!, Senior Analyst')
+    elif lvl >= 5:
+        print('Welcome!, Analyst')
+    elif lvl >= 3:
+            print("Welcome!, Intern")
+    else:
+            print('Welcome!, User')
+
+
+if maintenance:
+    print('System is under maintenance')
+elif banned_user == name:
+    print('Account is banned!')
+elif passwo == adm_password and lvl >= required_level:
+    print("Login Successful!")
+    showprofile()
+    if name == owner:
+        print('Welcome!, Owner')
+    showrole()
+
+else:
+    while adm_password != passwo:
+        print('Wrong password!')
+        print('Attempts left', attempts)
+        passwo = input('Enter your password:')
+        attempts = attempts - 1
+        if attempts == 0:
+            print('Access denied')
+            break
+
+def iflevel_low():
+    if lvl <= required_level:
+        print('Your level is`nt required')
+iflevel_low()
+
+def line():
+    print("=========")
+
+def menu():
+    line()
+    print("1 - View profile")
+    print("2 - Show role")
+    print("3 - Logout")
+    line()
+while True:
+    menu()
+
+    oli = int(input('Enter your chose:'))
+
+    if oli == 1:
+        showprofile()
+
+    elif oli == 2:
+        showrole()
+
+    elif oli == 3:
+        print('Are you sure?')
+        print("yes/no")
+        kelo = input("Enter your chose:")
+        if kelo == 'yes':
+            print('GoodBye!')
+            break
