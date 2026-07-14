@@ -51,7 +51,7 @@ else:
             break
 
 def iflevel_low():
-    if lvl <= required_level:
+    if lvl < required_level:
         print('Your level is too low.')
 iflevel_low()
 
