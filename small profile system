@@ -1,0 +1,40 @@
+user = {
+    "name": "Sergiy",
+    "level": 5,
+    "role": "SOC Analyst",
+}
+def line():
+    print("===============")
+def alrt():
+    print("=== PROFILE ===")
+while True:
+    print("1 - Show profile")
+    print("2 - Change role")
+    print("3 - Change level")
+    print("4 - Exit")
+    menu = int(input("Enter yours chose:"))
+    if menu == 1:
+        alrt()
+        print(user["name"])
+        print(user["level"])
+        print(user["role"])
+        line()
+
+    elif menu == 2:
+        nrole = input("Enter new role:")
+        user["role"] = nrole
+        print(user["role"])
+
+    elif menu == 3:
+        nlevel = int(input("Enter new lvl:"))
+        user["level"] = nlevel
+        print(user["level"])
+
+    elif menu == 4:
+        print("Are you sure? (y/n)")
+        sure = input("Enter yours chose")
+        if sure == "y":
+            print("Goodbye!")
+            break
+        elif sure == "n":
+            print("Welcome back!")
