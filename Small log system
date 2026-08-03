@@ -1,0 +1,11 @@
+username = input("Enter user name:")
+from datetime import datetime
+now = datetime.now()
+
+file = open("report.txt", "a")
+
+file.write("=============")
+file.write("\nUsername:" + username)
+file.write("\nTime:" + str(now))
+file.write("\n=============")
+file.close()
