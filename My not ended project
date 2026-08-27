@@ -1,0 +1,50 @@
+#Idc I need some break, maybe I`ll will finish it in a while
+
+events = [
+    {"username": "Sergiy", "status": "success"},
+    {"username": "admin", "status": "failed"},
+    {"username": "root", "status": "failed"},
+    {"username": "admin", "status": "failed"},
+    {"username": "guest", "status": "success"},
+]
+
+def analyze_events(events):
+    failed_users = {}
+    for event in events:
+        if event["status"] == "failed":
+            username = event["username"]
+            print("Username",event["username"], "look suspicious")
+            if username in failed_users:
+                failed_users[username] += 1
+            else:
+                failed_users[username] = 1
+    print("Total failed:", failed_users)
+    return failed_users
+result = analyze_events(events)
+print(result)
+
+def read_log_file(filename):
+    file = open(filename, "r")
+    events = []
+
+    for line in file:
+        event = parse_log_line(line)
+        events.append(event)
+    file.close()
+    return events
+
+    file.close()
+read_log_file("security.log")
+
+def parse_log_line(line):
+    parts = line.split(": ")
+
+    username = parts[1]
+    status = parts[0].split()[1]
+
+    slovnik = {
+    "username": username,
+    "status": status
+    }
+    
+    return slovnik
