@@ -1,0 +1,68 @@
+# Small project to remember Python
+
+score = 0
+
+print("Welcome mr.Gesik, that's my first project since summer 2026 and till now, honestly I tried my best")
+
+firstatt = input("So if you ready to pass mini-test just type *yes* if not *no*:")
+if firstatt == "no":
+    print("Maybe next time, Mr. Gesik!")
+if firstatt == "yes":
+
+    print("First question")
+    print("What does that mean CPU?")
+
+    print("1 - Literally CPU")
+    print("2 - RAM")
+    print("3 - GPU")
+
+    lome = input("Answer like this, 1, 2, 3: ")
+
+    if lome == "1":
+        print("That's the right answer!")
+        score = score + 1
+    else:
+        print("Wrong answer!")
+
+    print("Next question")
+    print("Which programming language am I using right now?")
+
+    print("1 - Java")
+    print("2 - Python")
+    print("3 - HTML")
+
+    lope = input("Answer like this, 1, 2, 3: ")
+
+    if lope == "2":
+        print("That's the right answer!")
+        score = score + 1
+    else:
+        print("Wrong answer!")
+
+    print("Next question")
+    print("What does RAM mean?")
+
+    print("1 - HDD")
+    print("2 - RAM")
+    print("3 - CPU")
+
+    loge = input("Answer like this, 1, 2, 3: ")
+
+    if loge == "2":
+        print("Nice! That's the right answer!")
+        score = score + 1
+    else:
+       print("Wrong answer!")
+
+       print("Appreciate that you're watching this!")
+if score == 3:
+    print("Excellent! Perfect result!")
+elif score == 2:
+    print("Good job!")
+elif score == 1:
+    print("Not bad, keep learning!")
+else:
+    print("You need more practice!")
+
+print("Here is your score:", score, "/ 3")
+print("I spent on it almost 2 hours, I know that`s pretty easy but. wdym?")
